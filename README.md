@@ -7,4 +7,4 @@
   - Standard source: https://webshop.vda.de/VDA/de/vda-278-05-2016
   - Version: 1.0.0
 # Info
-- The subschema does not include the changes of the generic Schema v0.2.0
+- The subschema does not include the changes of the generic schema v0.2.0
