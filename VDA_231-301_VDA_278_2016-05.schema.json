@@ -1,0 +1,835 @@
+{
+  "$id": "https://vda231-301.github.io/schemas/VDA_278/VDA_231-301_VDA_278_2016-05.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VDA 231-301 testing project JSON schema for VDA 278 2016-05",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json"
+    }
+  ],
+  "properties": {
+    "TestSeries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "if": {
+          "$ref": "#/$defs/VDA278.TestSeriesCondition"
+        },
+        "then": {
+          "$ref": "#/$defs/VDA278.TestSeries"
+        }
+      },
+      "contains": {
+        "$ref": "#/$defs/VDA278.TestSeriesCondition"
+      }
+    }
+  },
+  "$defs": {
+    "VDA278.TestSeriesCondition": {
+      "type": "object",
+      "properties": {
+        "Specification": {
+          "type": "object",
+          "properties": {
+            "Type": {
+              "const": "VDA",
+              "type": "string"
+            },
+            "Number": {
+              "const": "278",
+              "type": "string"
+            },
+            "IssueDate": {
+              "const": "2016-05",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "VDA278.TestSeries": {
+      "type": "object",
+      "properties": {
+        "TestType": {
+          "type": "string",
+          "const": "Thermodesorption"
+        },
+        "Executions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/VDA278.TestExecution"
+          }
+        },
+        "ConsolidatedCharacteristicValues": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueVOC1TotalEmission"
+            },
+            {
+              "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueVOC2TotalEmission"
+            },
+            {
+              "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueFOGTotalEmission"
+            }
+          ]
+        }
+      }
+    },
+    "VDA278.TestExecution": {
+      "type": "object",
+      "properties": {
+        "Specimen": {
+          "$ref": "#/$defs/VDA278.Specimen"
+        },
+        "RawData": {
+          "items": {
+            "$ref": "#/$defs/VDA278.InformationSetRawData"
+          },
+          "type": "array"
+        },
+        "SingleResults": {
+          "type": "array"
+
+
+
+
+
+        }
+      },
+      "required": [
+        "Specimen",
+        "RawData",
+        "SingleResults"
+      ]
+    },
+    "VDA278.InformationSetRawData": {
+      "type": "object",
+      "properties": {
+        "Designation": {
+          "oneOf": [
+            {
+              "type": "string",
+              "const": "VOC"
+            },
+            {
+              "type": "string",
+              "const": "FOG"
+            }
+          ]
+        },
+        "ArraySpec": {
+          "$ref": "#/$defs/VDA278.RawDataArraySpec"
+        },
+        "ArrayValue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/VDA278.RawDataArrayValue"
+          },
+          "minItems": 0
+        },
+        "Attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/VDA278.RawDataAttribute",
+            "unevaluatedProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "Designation",
+        "ArraySpec",
+        "ArrayValue"
+      ]
+    },
+    "VDA278.RawDataArraySpec": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "description": "An array specification for storing VDA 278 test results.",
+      "const": [
+          {
+            "Property": "Retention time",
+            "Unit": "min"
+          },
+          {
+            "Property": "Substance name"
+          },
+          {
+            "Property": "Legacy substance"
+          },
+          {
+            "Property": "Mass fragments"
+          },
+          {
+            "Property": "Main mass fragment"
+          },
+          {
+            "Property": "Potential substance match"
+          },
+          {
+            "Property": "CAS registry number"
+          },
+          {
+            "Property": "Area",
+            "Unit": "%"
+          },
+          {
+            "Property": "Emission",
+            "Unit": "µg/g"
+          },
+          {
+            "Property": "Remark"
+          }
+      ]
+    },
+    "VDA278.RawDataArrayValue": {
+      "description": "An array value type for storing VDA 278 test results.",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{2,7}[-][0-9]{2}[-][0-9]{1}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      ],
+      "minItems": 10,
+      "maxItems": 10,
+      "type": "array"
+    },
+    "VDA278.RawDataAttribute": {
+      "type": "object",
+      "required": [
+        "Property",
+        "Value"
+      ],
+      "oneOf": [
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeMethod"
+        },
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeFileName"
+        },
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeTotalEmissionValue"
+        },
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeSecondTotalEmissionValue"
+        },
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeRemark"
+        },
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeSumIdentifiedSubstancesArea"
+        },
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeSumIdentifiedSubstancesEmission"
+        },
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeVialNumber"
+        },
+        {
+          "$ref": "#/$defs/VDA278.RawDataAttributeClassifications"
+        }
+      ]
+    },
+    "VDA278.RawDataAttributeMethod": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Method"
+        },
+        "ValueType": {
+          "const": "Text"
+        },
+        "Value": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+        }
+      },
+      "required": [
+        "Property",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeFileName": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "File name"
+        },
+        "ValueType": {
+          "const": "Text"
+        },
+        "Value": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+        }
+      },
+      "required": [
+        "Property",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeTotalEmissionValue": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Total emission value"
+        },
+        "Unit": {
+          "const": "µg/g"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "Rounding": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "RoundingAccuracy": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeSecondTotalEmissionValue": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Second total emission value"
+        },
+        "Unit": {
+          "const": "µg/g"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "Rounding": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "RoundingAccuracy": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeRemark": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Remark"
+        },
+        "ValueType": {
+          "const": "Text"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Property",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeSumIdentifiedSubstancesArea": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Sum of identified substances area"
+        },
+        "Unit": {
+          "const": "%"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        "Rounding": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "RoundingAccuracy": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeSumIdentifiedSubstancesEmission": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Sum of identified substances emission"
+        },
+        "Unit": {
+          "const": "µg/g"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "Rounding": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "RoundingAccuracy": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeVialNumber": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Vial Number"
+        },
+        "ValueType": {
+          "const": "Text"
+        },
+        "Value": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+        }
+      },
+      "required": [
+        "Property",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeClassifications": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Classifications"
+        },
+        "Value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/VDA278.RawDataAttributeClassificationItem"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "Property",
+        "Value"
+      ]
+    },
+    "VDA278.RawDataAttributeClassificationItem": {
+      "type": "object",
+      "properties": {
+        "CAS registry number": {
+          "type": "string",
+          "pattern": "^[0-9]{2,7}[-][0-9]{2}[-][0-9]{1}$"
+        },
+        "Regulations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/VDA278.RawDataAttributeClassificationBranchingRegulationItem"
+          }
+        }
+      },
+      "required": [
+        "CAS registry number",
+        "Regulations"
+      ]
+    },
+    "VDA278.RawDataAttributeClassificationBranchingRegulationItem": {
+      "type": "object",
+      "if": {
+        "properties": {
+          "Regulation": {
+            "type": "string",
+            "const": "GADSL"
+          }
+        }
+      },
+      "then": {
+        "$ref": "#/$defs/VDA278.RawDataAttributeClassificationGADSLRegulationItem"
+      },
+      "else": {
+        "$ref": "#/$defs/VDA278.RawDataAttributeClassificationRegulationItem"
+      }
+    },
+    "VDA278.RawDataAttributeClassificationRegulationItem": {
+      "type": "object",
+      "properties": {
+        "Regulation": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+        },
+        "Values": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+          }
+        }
+      },
+      "required": [
+        "Regulation",
+        "Values"
+      ]
+    },
+    "VDA278.RawDataAttributeClassificationGADSLRegulationItem": {
+      "type": "object",
+      "properties": {
+        "Regulation": {
+          "type": "string",
+          "const": "GADSL"
+        },
+        "Values": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "oneOf": [
+              {
+                "const": "D"
+              },
+              {
+                "const": "P"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "Regulation",
+        "Values"
+      ]
+    },
+    "VDA278.Specimen": {
+      "type": "object",
+      "properties": {
+        "ProcessHistory": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "#/$defs/VDA278.ProcessStepPreconditioning"
+          }
+        }
+      }
+    },
+    "VDA278.ProcessStepPreconditioning": {
+      "type": "object",
+      "properties": {
+        "Specification": {
+          "type": "object",
+          "const": {
+            "Type": "VDA",
+            "Number": "278",
+            "IssueDate": "2016-05"
+          }
+        },
+        "ProcessData": {
+          "$ref": "#/$defs/VDA278.ProcessDataPreconditioning"
+        }
+      },
+      "required": [
+        "Specification",
+        "ProcessData"
+      ]
+    },
+    "VDA278.ProcessDataPreconditioning": {
+      "type": "object",
+      "properties": {
+        "Designation": {
+          "const": "Preconditioning"
+        },
+        "Attributes": {
+          "type": "array",
+          "maxItems": 6,
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/VDA278.ProcessDataPreconditioningDuration"
+            },
+            {
+              "$ref": "#/$defs/VDA278.ProcessDataPreconditioningEndDate"
+            },
+            {
+              "$ref": "#/$defs/VDA278.ProcessDataPreconditioningTempMin"
+            },
+            {
+              "$ref": "#/$defs/VDA278.ProcessDataPreconditioningTempMax"
+            },
+            {
+              "$ref": "#/$defs/VDA278.ProcessDataPreconditioningHumidMin"
+            },
+            {
+              "$ref": "#/$defs/VDA278.ProcessDataPreconditioningHumidMax"
+            }
+          ]
+        }
+      },
+      "required": [
+        "Designation",
+        "Attributes"
+      ]
+    },
+    "VDA278.ProcessDataPreconditioningDuration": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Duration"
+        },
+        "Unit": {
+          "const": "d"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        }
+      }
+    },
+    "VDA278.ProcessDataPreconditioningEndDate": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "End date"
+        },
+        "Value": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Date"
+        }
+      }
+    },
+    "VDA278.ProcessDataPreconditioningTempMin": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Temperature minimum"
+        },
+        "Unit": {
+          "const": "°C"
+        },
+        "Value": {
+          "type": "number"
+        }
+      }
+    },
+    "VDA278.ProcessDataPreconditioningTempMax": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Temperature maximum"
+        },
+        "Unit": {
+          "const": "°C"
+        },
+        "Value": {
+          "type": "number"
+        }
+      }
+    },
+    "VDA278.ProcessDataPreconditioningHumidMin": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Relative humidity minimum"
+        },
+        "Unit": {
+          "const": "%"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        }
+      }
+    },
+    "VDA278.ProcessDataPreconditioningHumidMax": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "Relative humidity maximum"
+        },
+        "Unit": {
+          "const": "%"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        }
+      }
+    },
+    "VDA278.ConsolidatedCharacteristicValue": {
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueVOC1TotalEmission"
+        },
+        {
+          "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueVOC2TotalEmission"
+        },
+        {
+          "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueFOGTotalEmission"
+        }
+      ]
+    },
+    "VDA278.ConsolidatedCharacteristicValueVOC1TotalEmission": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "VOC total emission value",
+          "type": "string"
+        },
+        "Unit": {
+          "const": "µg/g",
+          "type": "string"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "Aggregation": {
+          "const": "None",
+          "type": "string"
+        },
+        "CriterionType": {
+          "const": "Variable/Quantitative",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value",
+        "Aggregation",
+        "CriterionType"
+      ]
+    },
+    "VDA278.ConsolidatedCharacteristicValueVOC2TotalEmission": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "VOC second total emission value",
+          "type": "string"
+        },
+        "Unit": {
+          "const": "µg/g",
+          "type": "string"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "Aggregation": {
+          "const": "None",
+          "type": "string"
+        },
+        "CriterionType": {
+          "const": "Variable/Quantitative",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value",
+        "Aggregation",
+        "CriterionType"
+      ]
+    },
+    "VDA278.ConsolidatedCharacteristicValueFOGTotalEmission": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "const": "FOG total emission value",
+          "type": "string"
+        },
+        "Unit": {
+          "const": "µg/g",
+          "type": "string"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "Aggregation": {
+          "const": "None",
+          "type": "string"
+        },
+        "CriterionType": {
+          "const": "Variable/Quantitative",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value",
+        "Aggregation",
+        "CriterionType"
+      ]
+    }
+  }
+}
