@@ -1,6 +1,6 @@
 {
   "_id": "01917fb1-6d60-8abc-8abc-017617032d5c",
-  "_type": "TestReport",
+  "_type": "TestingProject",
   "_schemaVersion": "1.0.0",
   "Client": {
     "_id": "01917fb1-6d60-8abc-8abc-83938c48cec9",
@@ -84,12 +84,18 @@
     "Date": "2025-02-24"
   },
   "Signatory": "John Doe",
-  "Components": [
+  "ComponentMasters": [
     {
       "_id": "01917fb1-6d60-8abc-8abc-0412c6aff92b",
-      "_type": "Component",
-      "Designation": "Part 4711",
-      "PartNumber": "X1234567890"
+      "_type": "ComponentMaster",
+      "CustomerPartNumber": "X1234567890",
+      "Instances": [
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-0412c6aff92c",
+          "_type": "ComponentInstance",
+          "SerialNumber": "0123456789"
+        }
+      ]
     }
   ],
   "TestSeries": [
@@ -106,6 +112,7 @@
         "Title": "Thermal desorption-GC-MSD"
       },
       "TestType": "Thermodesorption",
+      "ComponentMasterID": "01917fb1-6d60-8abc-8abc-0412c6aff92b",
       "NumberOfExecutions": 2,
       "Assessment": "Substances have been identified that are listed in the CLP Regular and/or GADSL list. In total there are: styrene, phenol, Phenol, 2,4-bis(1,1-dimethylethyl)-, ethylbenzene",
       "TestingCenter": {
@@ -179,7 +186,7 @@
             "_id": "01917fb1-6d60-8abc-8abc-111000000001",
             "_type": "Specimen",
             "Designation": "VOC / FOG sample",
-            "ComponentID": "db218846-88c1-4cdb-a9b2-76925b1d6884",
+            "ComponentInstanceID": "db218846-88c1-4cdb-a9b2-76925b1d6884",
             "Flagging": "Test specimen according to attachment",
             "Attachment": {
               "_id": "01917fb1-6d60-8abc-8abc-111100000001",
@@ -305,20 +312,6 @@
                   "Property": "File name",
                   "ValueType": "Text",
                   "Value": "2025021100123TL03V1.D"
-                },
-                {
-                  "Property": "Total emission value",
-                  "Unit": "µg/g",
-                  "Value": 39.1,
-                  "Rounding": "Commercial",
-                  "RoundingAccuracy": 1
-                },
-                {
-                  "Property": "Second total emission value",
-                  "Unit": "µg/g",
-                  "Value": 25.9,
-                  "Rounding": "Commercial",
-                  "RoundingAccuracy": 1
                 },
                 {
                   "Property": "Remark",
@@ -512,13 +505,6 @@
                   "Value": "2025021100123TL03F1.D"
                 },
                 {
-                  "Property": "Total emission value",
-                  "Unit": "µg/g",
-                  "Value": 2123,
-                  "Rounding": "Commercial",
-                  "RoundingAccuracy": 0
-                },
-                {
                   "Property": "Remark",
                   "ValueType": "Text",
                   "Value": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\n-none-\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\n-none-"
@@ -613,7 +599,29 @@
               ]
             }
           ],
-          "SingleResults": []
+          "SingleResults": [
+            {
+              "Property": "VOC total emission value",
+              "Unit": "µg/g",
+              "Value": 39.1,
+              "Rounding": "Commercial",
+              "RoundingAccuracy": 1
+            },
+            {
+              "Property": "VOC second total emission value",
+              "Unit": "µg/g",
+              "Value": 25.9,
+              "Rounding": "Commercial",
+              "RoundingAccuracy": 1
+            },
+            {
+              "Property": "FOG total emission value",
+              "Unit": "µg/g",
+              "Value": 2123,
+              "Rounding": "Commercial",
+              "RoundingAccuracy": 0
+            }
+          ]
         }
       ],
       "ConsolidatedCharacteristicValues": [
