@@ -314,7 +314,7 @@
                   "Value": "2025021100123TL03V1.D"
                 },
                 {
-                  "Property": "Vial Number",
+                  "Property": "Vial number",
                   "ValueType": "Text",
                   "Value": "B1023424"
                 },
@@ -505,7 +505,7 @@
                   "Value": "2025021100123TL03F1.D"
                 },
                 {
-                  "Property": "Vial Number",
+                  "Property": "Vial number",
                   "ValueType": "Text",
                   "Value": "B1023427"
                 },

@@ -463,7 +463,7 @@
       "type": "object",
       "properties": {
         "Property": {
-          "const": "Vial Number"
+          "const": "Vial number"
         },
         "ValueType": {
           "const": "Text"
