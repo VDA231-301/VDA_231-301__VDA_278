@@ -606,15 +606,38 @@
           ],
           "SingleResults": [
             {
-              "Property": "",
-              "Value": ""
+              "_id": "01917fb1-6d60-8abc-8abc-200000000001",
+              "_type": "SingleResultPoint",
+              "Property": "VOC total emission value",
+              "Unit": "µg/g",
+              "Value": 29.1,
+              "Rounding": "Commercial",
+              "RoundingAccuracy": 1
+            },
+            {
+              "_id": "01917fb1-6d60-8abc-8abc-200000000002",
+              "_type": "SingleResultPoint",
+              "Property": "VOC second total emission value",
+              "Unit": "µg/g",
+              "Value": 20.9,
+              "Rounding": "Commercial",
+              "RoundingAccuracy": 1
+            },
+            {
+              "_id": "01917fb1-6d60-8abc-8abc-200000000003",
+              "_type": "SingleResultPoint",
+              "Property": "FOG total emission value",
+              "Unit": "µg/g",
+              "Value": 238,
+              "Rounding": "Commercial",
+              "RoundingAccuracy": 1
             }
           ]
         }
       ],
       "ConsolidatedCharacteristicValues": [
         {
-          "_id": "01917fb1-6d60-8abc-8abc-114000000001",
+          "_id": "01917fb1-6d60-8abc-8abc-300000000001",
           "_type": "ConsolidatedCharacteristicValue",
           "CriterionType": "Variable/Quantitative",
           "Property": "VOC total emission value",
@@ -622,10 +645,13 @@
           "Value": 29.1,
           "Aggregation": "None",
           "Rounding": "Commercial",
-          "RoundingAccuracy": 1
+          "RoundingAccuracy": 1,
+          "SingleResultIDs": [
+            "01917fb1-6d60-8abc-8abc-200000000001"
+          ]
         },
         {
-          "_id": "01917fb1-6d60-8abc-8abc-114000000002",
+          "_id": "01917fb1-6d60-8abc-8abc-300000000002",
           "_type": "ConsolidatedCharacteristicValue",
           "CriterionType": "Variable/Quantitative",
           "Property": "VOC second total emission value",
@@ -633,10 +659,13 @@
           "Value": 20.9,
           "Aggregation": "None",
           "Rounding": "Commercial",
-          "RoundingAccuracy": 1
+          "RoundingAccuracy": 1,
+          "SingleResultIDs": [
+            "01917fb1-6d60-8abc-8abc-200000000002"
+          ]
         },
         {
-          "_id": "01917fb1-6d60-8abc-8abc-114000000003",
+          "_id": "01917fb1-6d60-8abc-8abc-300000000003",
           "_type": "ConsolidatedCharacteristicValue",
           "CriterionType": "Variable/Quantitative",
           "Property": "FOG total emission value",
@@ -644,7 +673,10 @@
           "Value": 238,
           "Aggregation": "None",
           "Rounding": "Commercial",
-          "RoundingAccuracy": 1
+          "RoundingAccuracy": 1,
+          "SingleResultIDs": [
+            "01917fb1-6d60-8abc-8abc-200000000003"
+          ]
         }
       ]
     }
