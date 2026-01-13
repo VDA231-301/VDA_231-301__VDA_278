@@ -314,6 +314,11 @@
                   "Value": "2025021100123TL03V1.D"
                 },
                 {
+                  "Property": "Vial Number",
+                  "ValueType": "Text",
+                  "Value": "B1023424"
+                },
+                {
                   "Property": "Remark",
                   "ValueType": "Text",
                   "Value": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\nstyrene, phenol\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\nstyrene, phenol , Phenol, 2,4-bis(1,1-dimethylethyl)- , ethylbenzene"
@@ -331,11 +336,6 @@
                   "Value": 16.1,
                   "Rounding": "Commercial",
                   "RoundingAccuracy": 1
-                },
-                {
-                  "Property": "Vial Number",
-                  "ValueType": "Text",
-                  "Value": "B1023424"
                 },
                 {
                   "Property": "Classifications",
@@ -505,6 +505,11 @@
                   "Value": "2025021100123TL03F1.D"
                 },
                 {
+                  "Property": "Vial Number",
+                  "ValueType": "Text",
+                  "Value": "B1023427"
+                },
+                {
                   "Property": "Remark",
                   "ValueType": "Text",
                   "Value": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\n-none-\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\n-none-"
@@ -601,25 +606,8 @@
           ],
           "SingleResults": [
             {
-              "Property": "VOC total emission value",
-              "Unit": "µg/g",
-              "Value": 39.1,
-              "Rounding": "Commercial",
-              "RoundingAccuracy": 1
-            },
-            {
-              "Property": "VOC second total emission value",
-              "Unit": "µg/g",
-              "Value": 25.9,
-              "Rounding": "Commercial",
-              "RoundingAccuracy": 1
-            },
-            {
-              "Property": "FOG total emission value",
-              "Unit": "µg/g",
-              "Value": 2123,
-              "Rounding": "Commercial",
-              "RoundingAccuracy": 0
+              "Property": "",
+              "Value": ""
             }
           ]
         }
