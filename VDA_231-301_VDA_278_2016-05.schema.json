@@ -649,6 +649,72 @@
         "Values"
       ]
     },
+    "VDA278.SingleResultVOC1TotalEmission": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "type": "string",
+          "const": "VOC total emission value"
+        },
+        "Unit": {
+          "type": "string",
+          "const": "µg/g"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value"
+      ]
+    },
+    "VDA278.SingleResultVOC2TotalEmission": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "type": "string",
+          "const": "VOC second total emission value"
+        },
+        "Unit": {
+          "type": "string",
+          "const": "µg/g"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value"
+      ]
+    },
+    "VDA278.SingleResultFOGTotalEmission": {
+      "type": "object",
+      "properties": {
+        "Property": {
+          "type": "string",
+          "const": "FOG total emission value"
+        },
+        "Unit": {
+          "type": "string",
+          "const": "µg/g"
+        },
+        "Value": {
+          "type": "number",
+          "minimum": 0.0
+        }
+      },
+      "required": [
+        "Property",
+        "Unit",
+        "Value"
+      ]
+    },
     "VDA278.ConsolidatedCharacteristicValueVOC1TotalEmission": {
       "type": "object",
       "properties": {
