@@ -91,11 +91,29 @@
           "items": {
             "$ref": "#/$defs/VDA278.InformationSetRawData"
           }
+        },
+        "SingleResults": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/VDA278.SingleResultVOC1TotalEmission"
+              },
+              {
+                "$ref": "#/$defs/VDA278.SingleResultVOC2TotalEmission"
+              },
+              {
+                "$ref": "#/$defs/VDA278.SingleResultFOGTotalEmission"
+              }
+            ]
+          }
         }
       },
       "required": [
         "Specimen",
-        "RawData"
+        "RawData",
+        "SingleResults"
       ]
     },
     "VDA278.Specimen": {
