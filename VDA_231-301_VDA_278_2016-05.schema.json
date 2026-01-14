@@ -63,19 +63,20 @@
         },
         "ConsolidatedCharacteristicValues": {
           "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "prefixItems": [
-            {
-              "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueVOC1TotalEmission"
-            },
-            {
-              "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueVOC2TotalEmission"
-            },
-            {
-              "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueFOGTotalEmission"
-            }
-          ]
+          "minItems": 1,
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueVOC1TotalEmission"
+              },
+              {
+                "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueVOC2TotalEmission"
+              },
+              {
+                "$ref": "#/$defs/VDA278.ConsolidatedCharacteristicValueFOGTotalEmission"
+              }
+            ]            
+          }
         }
       }
     },
