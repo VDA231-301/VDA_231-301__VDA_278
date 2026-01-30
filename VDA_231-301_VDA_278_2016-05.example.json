@@ -297,340 +297,184 @@
               "Location": "Laboratory 1"
             }
           ],
-          "RawData": [
+          "SingleResults": [
             {
               "_id": "01917fb1-6d60-8abc-8abc-200000000001",
-              "_type": "InformationSet",
-              "Designation": "VOC",
-              "Attributes": [
-                {
-                  "Property": "Method",
-                  "ValueType": "Text",
-                  "Value": "VDA278-VOC.M"
-                },
-                {
-                  "Property": "File name",
-                  "ValueType": "Text",
-                  "Value": "2025021100123TL03V1.D"
-                },
-                {
-                  "Property": "Vial number",
-                  "ValueType": "Text",
-                  "Value": "B1023424"
-                },
-                {
-                  "Property": "Remark",
-                  "ValueType": "Text",
-                  "Value": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\nstyrene, phenol\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\nstyrene, phenol , Phenol, 2,4-bis(1,1-dimethylethyl)- , ethylbenzene"
-                },
-                {
-                  "Property": "Sum of identified substances area",
-                  "Unit": "%",
-                  "Value": 55.20,
-                  "Rounding": "Commercial",
-                  "RoundingAccuracy": 2
-                },
-                {
-                  "Property": "Sum of identified substances emission",
-                  "Unit": "µg/g",
-                  "Value": 16.1,
-                  "Rounding": "Commercial",
-                  "RoundingAccuracy": 1
-                },
-                {
-                  "Property": "Classifications",
-                  "Value": [
-                    {
-                      "CAS registry number": "100-42-5",
-                      "Regulations": [
-                        {
-                          "Regulation": "CLP",
-                          "Values": [
-                            "Repr. 2"
-                          ]
-                        },
-                        {
-                          "Regulation": "GADSL",
-                          "Values": [
-                            "D"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "CAS registry number": "108-95-2",
-                      "Regulations": [
-                        {
-                          "Regulation": "CLP",
-                          "Values": [
-                            "Muta. 2"
-                          ]
-                        },
-                        {
-                          "Regulation": "GADSL",
-                          "Values": [
-                            "D"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "CAS registry number": "100-41-4",
-                      "Regulations": [
-                        {
-                          "Regulation": "GADSL",
-                          "Values": [
-                            "D"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "CAS registry number": "96-76-4",
-                      "Regulations": [
-                        {
-                          "Regulation": "GADSL",
-                          "Values": [
-                            "D"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "ArraySpec": [
-                {
-                  "Property": "Retention time",
-                  "Unit": "min"
-                },
-                {
-                  "Property": "Substance name"
-                },
-                {
-                  "Property": "Legacy substance"
-                },
-                {
-                  "Property": "Mass fragments"
-                },
-                {
-                  "Property": "Main mass fragment"
-                },
-                {
-                  "Property": "Potential substance match"
-                },
-                {
-                  "Property": "CAS registry number"
-                },
-                {
-                  "Property": "Area",
-                  "Unit": "%"
-                },
-                {
-                  "Property": "Emission",
-                  "Unit": "µg/g"
-                },
-                {
-                  "Property": "Remark"
-                }
-              ],
-              "ArrayValue": [
-                [
-                  13.79,
-                  "chlorobenzene = MCB = phenylchloride",
-                  null,
-                  [
-                    112,
-                    77,
-                    114,
-                    51,
-                    50
-                  ],
-                  112,
-                  null,
-                  "000108-90-7",
-                  5.93,
-                  1.7,
-                  null
+              "_type": "SingleResultPoint",
+              "Property": "VOC",
+              "Value": {
+                "Method": "VDA278-VOC.M",
+                "File name": "2025021100123TL03V1.D",
+                "Vial number": "B1023424",
+                "Remark": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\nstyrene, phenol\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\nstyrene, phenol , Phenol, 2,4-bis(1,1-dimethylethyl)- , ethylbenzene",
+                "Sum of identified substances area": 55.20,
+                "Sum of identified substances emission": 16.1,
+                "Classifications": [
+                  {
+                    "CAS registry number": "100-42-5",
+                    "Regulations": [
+                      {
+                        "Regulation": "CLP",
+                        "Values": [
+                          "Repr. 2"
+                        ]
+                      },
+                      {
+                        "Regulation": "GADSL",
+                        "Values": [
+                          "D"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "CAS registry number": "108-95-2",
+                    "Regulations": [
+                      {
+                        "Regulation": "CLP",
+                        "Values": [
+                          "Muta. 2"
+                        ]
+                      },
+                      {
+                        "Regulation": "GADSL",
+                        "Values": [
+                          "D"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "CAS registry number": "100-41-4",
+                    "Regulations": [
+                      {
+                        "Regulation": "GADSL",
+                        "Values": [
+                          "D"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "CAS registry number": "96-76-4",
+                    "Regulations": [
+                      {
+                        "Regulation": "GADSL",
+                        "Values": [
+                          "D"
+                        ]
+                      }
+                    ]
+                  }
                 ],
-                [
-                  14.54,
-                  "ethylbenzene",
-                  null,
-                  [
-                    91,
-                    106,
-                    51,
-                    78,
-                    77
-                  ],
-                  91,
-                  null,
-                  "000100-41-4",
-                  4.19,
-                  1.2,
-                  null
-                ],
-                [
-                  16.02,
-                  "styrene",
-                  null,
-                  [
-                    104,
-                    103,
-                    78,
-                    51,
-                    77
-                  ],
-                  104,
-                  null,
-                  "000100-42-5",
-                  6.12,
-                  1.8,
-                  null
+                "Emissions": [
+                  {
+                    "Retention time": 13.79,
+                    "Substance name": "chlorobenzene = MCB = phenylchloride",
+                    "Legacy substance": null,
+                    "Mass fragments": [
+                      112,
+                      77,
+                      114,
+                      51,
+                      50
+                    ],
+                    "Main mass fragment": 112,
+                    "Potential substance match": null,
+                    "CAS registry number": "108-90-7",
+                    "Area": 5.93,
+                    "Emission": 1.7,
+                    "Remark": null
+                  },
+                  {
+                    "Retention time": 14.54,
+                    "Substance name": "ethylbenzene",
+                    "Legacy substance": null,
+                    "Mass fragments": [
+                      91,
+                      106,
+                      51,
+                      78,
+                      77
+                    ],
+                    "Main mass fragment": 91,
+                    "Potential substance match": null,
+                    "CAS registry number": "100-41-4",
+                    "Area": 4.19,
+                    "Emission": 1.2,
+                    "Remark": null
+                  },
+                  {
+                    "Retention time": 16.02,
+                    "Substance name": "styrene",
+                    "Legacy substance": null,
+                    "Mass fragments": [
+                      104,
+                      103,
+                      78,
+                      51,
+                      77
+                    ],
+                    "Main mass fragment": 104,
+                    "Potential substance match": null,
+                    "CAS registry number": "100-42-5",
+                    "Area": 6.12,
+                    "Emission": 1.8,
+                    "Remark": null
+                  }
                 ]
-              ]
+              }
             },
             {
               "_id": "01917fb1-6d60-8abc-8abc-200000000003",
-              "_type": "InformationSet",
-              "Designation": "FOG",
-              "Attributes": [
-                {
-                  "Property": "Method",
-                  "Value": "VDA278-FOG.M"
-                },
-                {
-                  "Property": "File name",
-                  "Value": "2025021100123TL03F1.D"
-                },
-                {
-                  "Property": "Vial number",
-                  "ValueType": "Text",
-                  "Value": "B1023427"
-                },
-                {
-                  "Property": "Remark",
-                  "ValueType": "Text",
-                  "Value": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\n-none-\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\n-none-"
-                },
-                {
-                  "Property": "Sum of identified substances area",
-                  "Unit": "%",
-                  "Value": 73.40,
-                  "Rounding": "Commercial",
-                  "RoundingAccuracy": 2
-                },
-                {
-                  "Property": "Sum of identified substances emission",
-                  "Unit": "µg/g",
-                  "Value": 220.4,
-                  "Rounding": "Commercial",
-                  "RoundingAccuracy": 1
-                }
-              ],
-              "ArraySpec": [
-                {
-                  "Property": "Retention time",
-                  "Unit": "min"
-                },
-                {
-                  "Property": "Substance name"
-                },
-                {
-                  "Property": "Legacy substance"
-                },
-                {
-                  "Property": "Mass fragments"
-                },
-                {
-                  "Property": "Main mass fragment"
-                },
-                {
-                  "Property": "Potential substance match"
-                },
-                {
-                  "Property": "CAS registry number"
-                },
-                {
-                  "Property": "Area",
-                  "Unit": "%"
-                },
-                {
-                  "Property": "Emission",
-                  "Unit": "µg/g"
-                },
-                {
-                  "Property": "Remark"
-                }
-              ],
-              "ArrayValue": [
-                [
-                  14.80,
-                  null,
-                  null,
-                  [
-                    57,
-                    71,
-                    43,
-                    85,
-                    124
-                  ],
-                  57,
-                  "alkane",
-                  null,
-                  0.46,
-                  1.1,
-                  null
-                ],
-                [
-                  15.19,
-                  "n-octadecane",
-                  null,
-                  [
-                    57,
-                    43,
-                    71,
-                    85,
-                    41
-                  ],
-                  57,
-                  null,
-                  "000593-45-3",
-                  0.57,
-                  1.3,
-                  null
+              "_type": "SingleResultPoint",
+              "Property": "FOG",
+              "Value": {
+                "Method": "VDA278-FOG.M",
+                "File name": "2025021100123TL03F1.D",
+                "Vial number": "B1023427",
+                "Remark": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\n-none-\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\n-none-",
+                "Sum of identified substances area": 73.40,
+                "Sum of identified substances emission": 220.4,
+                "Emissions": [
+                  {
+                    "Retention time": 14.80,
+                    "Substance name": null,
+                    "Legacy substance": null,
+                    "Mass fragments": [
+                      57,
+                      71,
+                      43,
+                      85,
+                      124
+                    ],
+                    "Main mass fragment": 57,
+                    "Potential substance match": "alkane",
+                    "CAS registry number": null,
+                    "Area": 0.46,
+                    "Emission": 1.1,
+                    "Remark": null
+                  },
+                  {
+                    "Retention time": 15.19,
+                    "Substance name": "n-octadecane",
+                    "Legacy substance": null,
+                    "Mass fragments": [
+                      57,
+                      43,
+                      71,
+                      85,
+                      41
+                    ],
+                    "Main mass fragment": 57,
+                    "Potential substance match": null,
+                    "CAS registry number": "593-45-3",
+                    "Area": 0.57,
+                    "Emission": 1.3,
+                    "Remark": null
+                  }
                 ]
-              ]
-            }
-          ],
-          "SingleResults": [
-            {
-              "_id": "01917fb1-6d60-8abc-8abc-200000000101",
-              "_type": "SingleResultPoint",
-              "Property": "VOC total emission value",
-              "Unit": "µg/g",
-              "Value": 29.1,
-              "Rounding": "Commercial",
-              "RoundingAccuracy": 1
-            },
-            {
-              "_id": "01917fb1-6d60-8abc-8abc-200000000102",
-              "_type": "SingleResultPoint",
-              "Property": "VOC second total emission value",
-              "Unit": "µg/g",
-              "Value": 20.9,
-              "Rounding": "Commercial",
-              "RoundingAccuracy": 1
-            },
-            {
-              "_id": "01917fb1-6d60-8abc-8abc-200000000103",
-              "_type": "SingleResultPoint",
-              "Property": "FOG total emission value",
-              "Unit": "µg/g",
-              "Value": 238,
-              "Rounding": "Commercial",
-              "RoundingAccuracy": 1
+              }
             }
           ]
         }
@@ -647,8 +491,7 @@
           "Rounding": "Commercial",
           "RoundingAccuracy": 1,
           "SingleResultIDs": [
-            "01917fb1-6d60-8abc-8abc-200000000001",
-            "01917fb1-6d60-8abc-8abc-200000000101"
+            "01917fb1-6d60-8abc-8abc-200000000001"
           ]
         },
         {
@@ -662,7 +505,7 @@
           "Rounding": "Commercial",
           "RoundingAccuracy": 1,
           "SingleResultIDs": [
-            "01917fb1-6d60-8abc-8abc-200000000102"
+            "01917fb1-6d60-8abc-8abc-200000000001"
           ]
         },
         {
@@ -676,8 +519,7 @@
           "Rounding": "Commercial",
           "RoundingAccuracy": 1,
           "SingleResultIDs": [
-            "01917fb1-6d60-8abc-8abc-200000000003",
-            "01917fb1-6d60-8abc-8abc-200000000103"
+            "01917fb1-6d60-8abc-8abc-200000000003"
           ]
         }
       ]
