@@ -1,4 +1,4 @@
-![VDS 278](https://github.com/user-attachments/assets/80d2bffa-ec2d-4f6f-91be-9bc244e9fa63)
+![VDA 278](https://github.com/user-attachments/assets/80d2bffa-ec2d-4f6f-91be-9bc244e9fa63)
 
 # VDA 278 – Emission Test Results
 ## JSON Subschema according to VDA 231‑301
