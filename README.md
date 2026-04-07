@@ -2,7 +2,8 @@
 
 # VDA 278 – Emission Test Results
 ## JSON Subschema according to VDA 231‑301
-
+🔗 This subschema is part of the VDA 231‑301 ecosystem
+→ https://github.com/VDA231-301
 ## Purpose and Scope
 
 This repository provides a **specific JSON subschema for the digital exchange of test results according to VDA 278**,  
