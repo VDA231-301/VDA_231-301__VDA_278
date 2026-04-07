@@ -7,7 +7,7 @@
 
 ## Purpose and Scope
 
-This repository provides a **specific JSON subschema for the digital exchange of test results according to VDA 278**,  
+This subschema addresses the need for machine‑readable VOC and fogging test data, enabling automated evaluation, traceability and regulatory compliance across supplier chains. The repository provides a **specific JSON subschema for the digital exchange of test results according to VDA 278**,  
 *“Thermal Desorption Analysis of Organic Emissions for the Characterization of Non‑Metallic Materials for Automobiles”*.
  - recommendation source: https://webshop.vda.de/VDA/de/vda-278-05-2016
    
