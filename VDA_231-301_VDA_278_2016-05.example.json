@@ -1,7 +1,7 @@
 {
   "_id": "01917fb1-6d60-8abc-8abc-017617032d5c",
   "_type": "TestingProject",
-  "_schemaVersion": "1.0.0",
+  "_schemaVersion": "2.0.0",
   "Client": {
     "_id": "01917fb1-6d60-8abc-8abc-83938c48cec9",
     "_type": "Location",
@@ -14,67 +14,7 @@
     ]
   },
   "ClientOrderNumber": "MX1232407270021aj",
-  "Contractor": {
-    "_id": "01917fb1-6d60-8abc-8abc-ac49a8c54352",
-    "_type": "TestingCenter",
-    "Location": {
-      "_id": "01917fb1-6d60-8abc-8abc-950a711ad4d2",
-      "_type": "Location",
-      "Name": "TestLab",
-      "Identification": [
-        {
-          "Type": "Example Identification Type",
-          "Identifier": "00011"
-        }
-      ],
-      "Address": {
-        "_id": "01917fb1-6d60-8abc-8abc-002abdd41288",
-        "_type": "ContactDetails",
-        "EMail": "info@testlab.com",
-        "Fax": "\u002B49 222 333 441",
-        "Phone": "\u002B49 222 333 440"
-      }
-    },
-    "TestingManager": {
-      "_id": "01917fb1-6d60-8abc-8abc-e9914c422dc7",
-      "_type": "Person",
-      "FirstName": "John",
-      "LastName": "Doe",
-      "ID-Number": "108326",
-      "EMail": "john.doe@testlab.com"
-    },
-    "Certifications": [
-      {
-        "_id": "01917fb1-6d60-8abc-8abc-51e397accdb0",
-        "_type": "Certification",
-        "Specification": {
-          "Authority": "DIN",
-          "Type": "DIN EN ISO/IEC",
-          "Number": "17025",
-          "IssueDate": "2018-03"
-        },
-        "AccreditationDate": {
-          "Date": "2019-11-01"
-        }
-      },
-      {
-        "_id": "01917fb1-6d60-8abc-8abc-2619c6d9ea40",
-        "_type": "Certification",
-        "Specification": {
-          "Authority": "Example Authority",
-          "Type": "EXA",
-          "Number": "1001",
-          "IssueDate": "2019-01"
-        },
-        "AccreditationDate": {
-          "Date": "2022-11-01"
-        },
-        "ValidUntil": {
-          "Date": "2025-11-01"
-        }
-      }
-    ]
-  },
+  "ContractorID": "01917fb1-6d60-8abc-8abc-ac49a8c54352",
   "LaboratoryOrderNumber": "2025021100123TL03",
   "OrderReference": "OR-20250212045327",
   "OrderDate": {
@@ -102,8 +42,8 @@
     {
       "_id": "01917fb1-6d60-8abc-8abc-100000000001",
       "_type": "TestSeries",
-      "PredecessorId": null,
-      "SuccessorId": null,
+      "PredecessorID": null,
+      "SuccessorID": null,
       "Specification": {
         "Authority": "VDA",
         "Type": "VDA",
@@ -115,67 +55,7 @@
       "ComponentMasterID": "01917fb1-6d60-8abc-8abc-0412c6aff92b",
       "NumberOfExecutions": 2,
       "Assessment": "Substances have been identified that are listed in the CLP Regular and/or GADSL list. In total there are: styrene, phenol, Phenol, 2,4-bis(1,1-dimethylethyl)-, ethylbenzene",
-      "TestingCenter": {
-        "_id": "01917fb1-6d60-8abc-8abc-ac49a8c54353",
-        "_type": "TestingCenter",
-        "Location": {
-          "_id": "01917fb1-6d60-8abc-8abc-950a711ad4d3",
-          "_type": "Location",
-          "Name": "TestLab",
-          "Identification": [
-            {
-              "Type": "Example Identification Type",
-              "Identifier": "00011"
-            }
-          ],
-          "Address": {
-            "_id": "01917fb1-6d60-8abc-8abc-002abdd41289",
-            "_type": "ContactDetails",
-            "EMail": "info@testlab.com",
-            "Fax": "\u002B49 222 333 441",
-            "Phone": "\u002B49 222 333 440"
-          }
-        },
-        "TestingManager": {
-          "_id": "01917fb1-6d60-8abc-8abc-e9914c422dc8",
-          "_type": "Person",
-          "FirstName": "John",
-          "LastName": "Doe",
-          "ID-Number": "108326",
-          "EMail": "john.doe@testlab.com"
-        },
-        "Certifications": [
-          {
-            "_id": "01917fb1-6d60-8abc-8abc-51e397accdb1",
-            "_type": "Certification",
-            "Specification": {
-              "Authority": "DIN",
-              "Type": "DIN EN ISO/IEC",
-              "Number": "17025",
-              "IssueDate": "2018-03"
-            },
-            "AccreditationDate": {
-              "Date": "2019-11-01"
-            }
-          },
-          {
-            "_id": "01917fb1-6d60-8abc-8abc-2619c6d9ea41",
-            "_type": "Certification",
-            "Specification": {
-              "Authority": "Example Authority",
-              "Type": "EXA",
-              "Number": "1001",
-              "IssueDate": "2019-01"
-            },
-            "AccreditationDate": {
-              "Date": "2022-11-01"
-            },
-            "ValidUntil": {
-              "Date": "2025-11-01"
-            }
-          }
-        ]
-      },
+      "TestingCenterID": "01917fb1-6d60-8abc-8abc-ac49a8c54353",
       "Executions": [
         {
           "_id": "01917fb1-6d60-8abc-8abc-110000000001",
@@ -521,6 +401,130 @@
           "SingleResultIDs": [
             "01917fb1-6d60-8abc-8abc-200000000003"
           ]
+        }
+      ]
+    }
+  ],
+  "TestingCenters": [
+    {
+      "_id": "01917fb1-6d60-8abc-8abc-ac49a8c54352",
+      "_type": "TestingCenter",
+      "Location": {
+        "_id": "01917fb1-6d60-8abc-8abc-950a711ad4d2",
+        "_type": "Location",
+        "Name": "TestLab",
+        "Identification": [
+          {
+            "Type": "Example Identification Type",
+            "Identifier": "00011"
+          }
+        ],
+        "Address": {
+          "_id": "01917fb1-6d60-8abc-8abc-002abdd41288",
+          "_type": "ContactDetails",
+          "EMail": "info@testlab.com",
+          "Fax": "\u002B49 222 333 441",
+          "Phone": "\u002B49 222 333 440"
+        }
+      },
+      "TestingManager": {
+        "_id": "01917fb1-6d60-8abc-8abc-e9914c422dc7",
+        "_type": "Person",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "ID-Number": "108326",
+        "EMail": "john.doe@testlab.com"
+      },
+      "Certifications": [
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-51e397accdb0",
+          "_type": "Certification",
+          "Specification": {
+            "Authority": "DIN",
+            "Type": "DIN EN ISO/IEC",
+            "Number": "17025",
+            "IssueDate": "2018-03"
+          },
+          "AccreditationDate": {
+            "Date": "2019-11-01"
+          }
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-2619c6d9ea40",
+          "_type": "Certification",
+          "Specification": {
+            "Authority": "Example Authority",
+            "Type": "EXA",
+            "Number": "1001",
+            "IssueDate": "2019-01"
+          },
+          "AccreditationDate": {
+            "Date": "2022-11-01"
+          },
+          "ValidUntil": {
+            "Date": "2025-11-01"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "01917fb1-6d60-8abc-8abc-ac49a8c54353",
+      "_type": "TestingCenter",
+      "Location": {
+        "_id": "01917fb1-6d60-8abc-8abc-950a711ad4d3",
+        "_type": "Location",
+        "Name": "TestLab",
+        "Identification": [
+          {
+            "Type": "Example Identification Type",
+            "Identifier": "00011"
+          }
+        ],
+        "Address": {
+          "_id": "01917fb1-6d60-8abc-8abc-002abdd41289",
+          "_type": "ContactDetails",
+          "EMail": "info@testlab.com",
+          "Fax": "\u002B49 222 333 441",
+          "Phone": "\u002B49 222 333 440"
+        }
+      },
+      "TestingManager": {
+        "_id": "01917fb1-6d60-8abc-8abc-e9914c422dc8",
+        "_type": "Person",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "ID-Number": "108326",
+        "EMail": "john.doe@testlab.com"
+      },
+      "Certifications": [
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-51e397accdb1",
+          "_type": "Certification",
+          "Specification": {
+            "Authority": "DIN",
+            "Type": "DIN EN ISO/IEC",
+            "Number": "17025",
+            "IssueDate": "2018-03"
+          },
+          "AccreditationDate": {
+            "Date": "2019-11-01"
+          }
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-2619c6d9ea41",
+          "_type": "Certification",
+          "Specification": {
+            "Authority": "Example Authority",
+            "Type": "EXA",
+            "Number": "1001",
+            "IssueDate": "2019-01"
+          },
+          "AccreditationDate": {
+            "Date": "2022-11-01"
+          },
+          "ValidUntil": {
+            "Date": "2025-11-01"
+          }
         }
       ]
     }

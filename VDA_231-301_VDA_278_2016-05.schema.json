@@ -1,11 +1,11 @@
 {
-  "$id": "https://vda231-301.github.io/schemas/VDA_278/VDA_231-301_VDA_278_2016-05.schema.json",
+  "$id": "https://vda231-301.github.io/schemas/VDA_278/VDA_231-301_VDA_278_2016-05_v2.0.0.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "VDA 231-301 testing project JSON schema for VDA 278 2016-05",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json"
+      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json"
     }
   ],
   "properties": {
@@ -200,7 +200,7 @@
           "const": "End date"
         },
         "Value": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Date"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.Date"
         }
       }
     },
@@ -268,7 +268,7 @@
       "type": "object",
       "properties": {
         "_id": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.Identifier"
         },
         "_type": {
           "type": "string",
@@ -318,13 +318,13 @@
       "type": "object",
       "properties": {
         "Method": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.RestrictedString"
         },
         "File name": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.RestrictedString"
         },
         "Vial number": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.RestrictedString"
         },
         "Remark": {
           "type": "string"
@@ -478,13 +478,13 @@
       "type": "object",
       "properties": {
         "Regulation": {
-          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.RestrictedString"
         },
         "Values": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+            "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.RestrictedString"
           }
         }
       },
