@@ -1,7 +1,7 @@
 {
   "_id": "01917fb1-6d60-8abc-8abc-017617032d5c",
   "_type": "TestingProject",
-  "_schemaVersion": "2.0.0",
+  "_schemaVersion": "3.0.0",
   "Client": {
     "_id": "01917fb1-6d60-8abc-8abc-83938c48cec9",
     "_type": "Location",
@@ -17,17 +17,14 @@
   "ContractorID": "01917fb1-6d60-8abc-8abc-ac49a8c54352",
   "LaboratoryOrderNumber": "2025021100123TL03",
   "OrderReference": "OR-20250212045327",
-  "OrderDate": {
-    "Date": "2025-02-12"
-  },
-  "ReportDate": {
-    "Date": "2025-02-24"
-  },
+  "OrderDate": { "Date": "2025-02-12" },
+  "ReportDate": { "Date": "2025-02-24" },
   "Signatory": "John Doe",
   "ComponentMasters": [
     {
       "_id": "01917fb1-6d60-8abc-8abc-0412c6aff92b",
       "_type": "ComponentMaster",
+      "Designation": "Interior door trim material",
       "CustomerPartNumber": "X1234567890",
       "Instances": [
         {
@@ -38,7 +35,7 @@
       ]
     }
   ],
-  "TestSeries": [
+  "Topics": [
     {
       "_id": "01917fb1-6d60-8abc-8abc-100000000001",
       "_type": "TestSeries",
@@ -53,121 +50,110 @@
       },
       "TestType": "Thermodesorption",
       "ComponentMasterID": "01917fb1-6d60-8abc-8abc-0412c6aff92b",
-      "NumberOfExecutions": 2,
-      "Assessment": "Substances have been identified that are listed in the CLP Regular and/or GADSL list. In total there are: styrene, phenol, Phenol, 2,4-bis(1,1-dimethylethyl)-, ethylbenzene",
+      "NumberOfExecutions": 3,
+      "Assessment": "Substances listed in CLP and/or GADSL were identified in the selected VOC analysis.",
       "TestingCenterID": "01917fb1-6d60-8abc-8abc-ac49a8c54353",
+      "Specimens": [
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-111000000001",
+          "_type": "Specimen",
+          "Designation": "VOC specimen 1",
+          "ComponentInstanceID": "01917fb1-6d60-8abc-8abc-0412c6aff92c",
+          "Flagging": "First cut specimen",
+          "Attachment": {
+            "_id": "01917fb1-6d60-8abc-8abc-111100000001",
+            "_type": "Attachment",
+            "FileName": "sample_vda278_1.jpg",
+            "MimeType": "application/jpeg",
+            "Encoding": "base64",
+            "Hashes": [{ "Type": "md5", "Value": "b3650c44f580b14995bd77284a9dda8d" }],
+            "Designation": "Specimen 1",
+            "Data": "e2Fib3d1ZmJvZjhxM2FvcGgzd2FmcW84cGhiZn0="
+          },
+          "Extraction": {
+            "_id": "01917fb1-6d60-8abc-8abc-111110000001",
+            "_type": "Extraction",
+            "Position": "See attachment",
+            "Method": "Cut from door trim material",
+            "Specification": { "Type": "VDA", "Number": "278", "IssueDate": "2016-05" },
+            "Date": { "Date": "2025-02-17" }
+          },
+          "ProcessHistory": [
+            {
+              "_id": "01917fb1-6d60-8abc-8abc-111120000001",
+              "_type": "ProcessStep",
+              "Index": 1,
+              "Specification": { "Type": "VDA", "Number": "278", "IssueDate": "2016-05" },
+              "ProcessData": {
+                "_id": "01917fb1-6d60-8abc-8abc-111120000002",
+                "_type": "InformationSet",
+                "Designation": "Preconditioning",
+                "Attributes": [
+                  { "Property": "Duration", "Unit": "d", "Value": 7 },
+                  { "Property": "End date", "Value": { "Date": "2025-02-17" } },
+                  { "Property": "Temperature minimum", "Unit": "°C", "ValueType": "Number", "Value": 21.3 },
+                  { "Property": "Temperature maximum", "Unit": "°C", "ValueType": "Number", "Value": 24.2 },
+                  { "Property": "Relative humidity minimum", "Unit": "%", "ValueType": "Number", "Value": 41.2 },
+                  { "Property": "Relative humidity maximum", "Unit": "%", "ValueType": "Number", "Value": 57.4 }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-111000000002",
+          "_type": "Specimen",
+          "Designation": "VOC and FOG specimen 2",
+          "ComponentInstanceID": "01917fb1-6d60-8abc-8abc-0412c6aff92c",
+          "Flagging": "Second cut specimen",
+          "Attachment": {
+            "_id": "01917fb1-6d60-8abc-8abc-111100000002",
+            "_type": "Attachment",
+            "FileName": "sample_vda278_2.jpg",
+            "MimeType": "application/jpeg",
+            "Encoding": "base64",
+            "Hashes": [{ "Type": "md5", "Value": "0cc175b9c0f1b6a831c399e269772661" }],
+            "Designation": "Specimen 2",
+            "Data": "e2Fib3d1ZmJvZjhxM2FvcGgzd2FmcW84cGhiZn0="
+          },
+          "Extraction": {
+            "_id": "01917fb1-6d60-8abc-8abc-111110000002",
+            "_type": "Extraction",
+            "Position": "See attachment",
+            "Method": "Cut from door trim material",
+            "Specification": { "Type": "VDA", "Number": "278", "IssueDate": "2016-05" },
+            "Date": { "Date": "2025-02-17" }
+          },
+          "ProcessHistory": [
+            {
+              "_id": "01917fb1-6d60-8abc-8abc-111120000003",
+              "_type": "ProcessStep",
+              "Index": 1,
+              "Specification": { "Type": "VDA", "Number": "278", "IssueDate": "2016-05" },
+              "ProcessData": {
+                "_id": "01917fb1-6d60-8abc-8abc-111120000004",
+                "_type": "InformationSet",
+                "Designation": "Preconditioning",
+                "Attributes": [
+                  { "Property": "Duration", "Unit": "d", "Value": 7 },
+                  { "Property": "End date", "Value": { "Date": "2025-02-17" } },
+                  { "Property": "Temperature minimum", "Unit": "°C", "ValueType": "Number", "Value": 21.5 },
+                  { "Property": "Temperature maximum", "Unit": "°C", "ValueType": "Number", "Value": 24.0 },
+                  { "Property": "Relative humidity minimum", "Unit": "%", "ValueType": "Number", "Value": 42.0 },
+                  { "Property": "Relative humidity maximum", "Unit": "%", "ValueType": "Number", "Value": 56.8 }
+                ]
+              }
+            }
+          ]
+        }
+      ],
       "Executions": [
         {
           "_id": "01917fb1-6d60-8abc-8abc-110000000001",
           "_type": "TestExecution",
           "Numerator": 1,
-          "Designation": "14345",
-          "Specimen": {
-            "_id": "01917fb1-6d60-8abc-8abc-111000000001",
-            "_type": "Specimen",
-            "Designation": "VOC / FOG sample",
-            "ComponentInstanceID": "db218846-88c1-4cdb-a9b2-76925b1d6884",
-            "Flagging": "Test specimen according to attachment",
-            "Attachment": {
-              "_id": "01917fb1-6d60-8abc-8abc-111100000001",
-              "_type": "Attachment",
-              "FileName": "sample_vda278.jpg",
-              "MimeType": "application/jpeg",
-              "Encoding": "base64",
-              "Hashes": [
-                {
-                  "Type": "md5",
-                  "Value": "b3650c44f580b14995bd77284a9dda8d"
-                }
-              ],
-              "Designation": "Specimen B",
-              "Data": "e2Fib3d1ZmJvZjhxM2FvcGgzd2FmcW84cGhiZn0="
-            },
-            "Extraction": {
-              "_id": "01917fb1-6d60-8abc-8abc-111110000001",
-              "_type": "Extraction",
-              "Position": "See attachment",
-              "Method": "Drill core",
-              "Specification": {
-                "Type": "VDA",
-                "Number": "278",
-                "IssueDate": "2016-05"
-              },
-              "Attachment": {
-                "_id": "01917fb1-6d60-8abc-8abc-111111000001",
-                "_type": "Attachment",
-                "FileName": "sample_extraction_b1.jpg",
-                "MimeType": "application/jpeg",
-                "Encoding": "base64",
-                "Hashes": [
-                  {
-                    "Type": "md5",
-                    "Value": "b3650c44f580b14995bd77284a9dda8d"
-                  }
-                ],
-                "Designation": "Specimen B FOC drill",
-                "Data": "e2Fib3d1ZmJvZjhxM2FvcGgzd2FmcW84cGhiZn0="
-              },
-              "Date": {
-                "Date": "2024-03-01",
-                "Timestamp": 1672531200
-              }
-            },
-            "ProcessHistory": [
-              {
-                "_id": "01917fb1-6d60-8abc-8abc-111120000001",
-                "_type": "ProcessStep",
-                "Index": 1,
-                "Specification": {
-                  "Type": "VDA",
-                  "Number": "278",
-                  "IssueDate": "2016-05"
-                },
-                "ProcessData": {
-                  "_id": "01917fb1-6d60-8abc-8abc-111120000002",
-                  "_type": "InformationSet",
-                  "Designation": "Preconditioning",
-                  "Attributes": [
-                    {
-                      "Property": "Duration",
-                      "Unit": "d",
-                      "Value": 7
-                    },
-                    {
-                      "Property": "End date",
-                      "Value": {
-                        "Date": "2023-10-16"
-                      }
-                    },
-                    {
-                      "Property": "Temperature minimum",
-                      "Unit": "°C",
-                      "ValueType": "Number",
-                      "Value": 21.3
-                    },
-                    {
-                      "Property": "Temperature maximum",
-                      "Unit": "°C",
-                      "ValueType": "Number",
-                      "Value": 24.2
-                    },
-                    {
-                      "Property": "Relative humidity minimum",
-                      "Unit": "%",
-                      "ValueType": "Number",
-                      "Value": 41.2
-                    },
-                    {
-                      "Property": "Relative humidity maximum",
-                      "Unit": "%",
-                      "ValueType": "Number",
-                      "Value": 57.4
-                    }
-                  ]
-                }
-              }
-            ]
-          },
+          "Designation": "VOC run 1",
+          "SpecimenID": "01917fb1-6d60-8abc-8abc-111000000001",
           "MeasurementSystems": [
             {
               "_id": "01917fb1-6d60-8abc-8abc-112000000001",
@@ -177,189 +163,124 @@
               "Location": "Laboratory 1"
             }
           ],
-          "SingleResults": [
+          "SingleResults": {
+            "_id": "01917fb1-6d60-8abc-8abc-200000000001",
+            "_type": "InformationSet",
+            "Designation": "VOC",
+            "Attributes": [
+              { "Property": "Method", "ValueType": "Text", "Value": "VDA278-VOC.M" },
+              { "Property": "File name", "ValueType": "Text", "Value": "2025021100123TL03V1.D" },
+              { "Property": "Vial number", "ValueType": "Text", "Value": "B1023424" },
+              { "Property": "Remark", "ValueType": "Text", "Value": "Detailed emissions are reported for this higher VOC result." },
+              { "Property": "Sum of identified substances area", "Unit": "%", "Value": 55.2, "Rounding": "Commercial", "RoundingAccuracy": 2 },
+              { "Property": "Sum of identified substances emission", "Unit": "µg/g", "Value": 16.1, "Rounding": "Commercial", "RoundingAccuracy": 1 },
+              { "Property": "VOC total emission value", "Unit": "µg/g", "Value": 29.1, "Rounding": "Commercial", "RoundingAccuracy": 1 }
+            ],
+            "ArraySpec": [
+              { "Property": "Retention time", "Unit": "min" },
+              { "Property": "Substance name" },
+              { "Property": "Legacy substance" },
+              { "Property": "Mass fragments" },
+              { "Property": "Main mass fragment" },
+              { "Property": "Potential substance match" },
+              { "Property": "CAS registry number" },
+              { "Property": "Area", "Unit": "%" },
+              { "Property": "Emission", "Unit": "µg/g" },
+              { "Property": "CLP classifications" },
+              { "Property": "GADSL classifications" },
+              { "Property": "Remark" }
+            ],
+            "ArrayValue": [
+              [13.79, "chlorobenzene", "MCB; phenylchloride", [112, 77, 114, 51, 50], 112, null, "108-90-7", 5.93, 1.7, [], [], null],
+              [14.54, "ethylbenzene", null, [91, 106, 51, 78, 77], 91, null, "100-41-4", 4.19, 1.2, [], ["D"], null],
+              [16.02, "styrene", null, [104, 103, 78, 51, 77], 104, null, "100-42-5", 6.12, 1.8, ["Repr. 2"], ["D"], null],
+              [17.35, "phenol", null, [94, 66, 65, 39], 94, null, "108-95-2", 18.4, 4.6, ["Muta. 2"], ["D"], null],
+              [21.48, "2,4-di-tert-butylphenol", "Phenol, 2,4-bis(1,1-dimethylethyl)-", [191, 206, 57, 41], 191, null, "96-76-4", 20.56, 6.8, [], ["D"], null]
+            ]
+          }
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-110000000002",
+          "_type": "TestExecution",
+          "Numerator": 2,
+          "Designation": "VOC run 2",
+          "SpecimenID": "01917fb1-6d60-8abc-8abc-111000000002",
+          "MeasurementSystems": [
             {
-              "_id": "01917fb1-6d60-8abc-8abc-200000000001",
-              "_type": "SingleResultPoint",
-              "Property": "VOC",
-              "Value": {
-                "Method": "VDA278-VOC.M",
-                "File name": "2025021100123TL03V1.D",
-                "Vial number": "B1023424",
-                "Remark": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\nstyrene, phenol\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\nstyrene, phenol , Phenol, 2,4-bis(1,1-dimethylethyl)- , ethylbenzene",
-                "Sum of identified substances area": 55.20,
-                "Sum of identified substances emission": 16.1,
-                "Classifications": [
-                  {
-                    "CAS registry number": "100-42-5",
-                    "Regulations": [
-                      {
-                        "Regulation": "CLP",
-                        "Values": [
-                          "Repr. 2"
-                        ]
-                      },
-                      {
-                        "Regulation": "GADSL",
-                        "Values": [
-                          "D"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "CAS registry number": "108-95-2",
-                    "Regulations": [
-                      {
-                        "Regulation": "CLP",
-                        "Values": [
-                          "Muta. 2"
-                        ]
-                      },
-                      {
-                        "Regulation": "GADSL",
-                        "Values": [
-                          "D"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "CAS registry number": "100-41-4",
-                    "Regulations": [
-                      {
-                        "Regulation": "GADSL",
-                        "Values": [
-                          "D"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "CAS registry number": "96-76-4",
-                    "Regulations": [
-                      {
-                        "Regulation": "GADSL",
-                        "Values": [
-                          "D"
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "Emissions": [
-                  {
-                    "Retention time": 13.79,
-                    "Substance name": "chlorobenzene = MCB = phenylchloride",
-                    "Legacy substance": null,
-                    "Mass fragments": [
-                      112,
-                      77,
-                      114,
-                      51,
-                      50
-                    ],
-                    "Main mass fragment": 112,
-                    "Potential substance match": null,
-                    "CAS registry number": "108-90-7",
-                    "Area": 5.93,
-                    "Emission": 1.7,
-                    "Remark": null
-                  },
-                  {
-                    "Retention time": 14.54,
-                    "Substance name": "ethylbenzene",
-                    "Legacy substance": null,
-                    "Mass fragments": [
-                      91,
-                      106,
-                      51,
-                      78,
-                      77
-                    ],
-                    "Main mass fragment": 91,
-                    "Potential substance match": null,
-                    "CAS registry number": "100-41-4",
-                    "Area": 4.19,
-                    "Emission": 1.2,
-                    "Remark": null
-                  },
-                  {
-                    "Retention time": 16.02,
-                    "Substance name": "styrene",
-                    "Legacy substance": null,
-                    "Mass fragments": [
-                      104,
-                      103,
-                      78,
-                      51,
-                      77
-                    ],
-                    "Main mass fragment": 104,
-                    "Potential substance match": null,
-                    "CAS registry number": "100-42-5",
-                    "Area": 6.12,
-                    "Emission": 1.8,
-                    "Remark": null
-                  }
-                ]
-              }
-            },
-            {
-              "_id": "01917fb1-6d60-8abc-8abc-200000000003",
-              "_type": "SingleResultPoint",
-              "Property": "FOG",
-              "Value": {
-                "Method": "VDA278-FOG.M",
-                "File name": "2025021100123TL03F1.D",
-                "Vial number": "B1023427",
-                "Remark": "The following identified substances are listed in the Regulation (EC) No 1272/2008 (CLP-regulation) [Updated to ATP17\n(December 2021)] with Carcinogenicity, Germ cell mutagenicity; embryotoxic or Reproductive toxicity:\n-none-\nThe following identified substances are listed in the Global Automotive Declarable Substance List (GADSL 02/01/2023) with D/P\nor D or P :\n-none-",
-                "Sum of identified substances area": 73.40,
-                "Sum of identified substances emission": 220.4,
-                "Emissions": [
-                  {
-                    "Retention time": 14.80,
-                    "Substance name": null,
-                    "Legacy substance": null,
-                    "Mass fragments": [
-                      57,
-                      71,
-                      43,
-                      85,
-                      124
-                    ],
-                    "Main mass fragment": 57,
-                    "Potential substance match": "alkane",
-                    "CAS registry number": null,
-                    "Area": 0.46,
-                    "Emission": 1.1,
-                    "Remark": null
-                  },
-                  {
-                    "Retention time": 15.19,
-                    "Substance name": "n-octadecane",
-                    "Legacy substance": null,
-                    "Mass fragments": [
-                      57,
-                      43,
-                      71,
-                      85,
-                      41
-                    ],
-                    "Main mass fragment": 57,
-                    "Potential substance match": null,
-                    "CAS registry number": "593-45-3",
-                    "Area": 0.57,
-                    "Emission": 1.3,
-                    "Remark": null
-                  }
-                ]
-              }
+              "_id": "01917fb1-6d60-8abc-8abc-112000000002",
+              "_type": "MeasurementSystem",
+              "Designation": "GCMS",
+              "SystemType": "GC-AB01",
+              "Location": "Laboratory 1"
             }
-          ]
+          ],
+          "SingleResults": {
+            "_id": "01917fb1-6d60-8abc-8abc-200000000002",
+            "_type": "InformationSet",
+            "Designation": "VOC",
+            "Attributes": [
+              { "Property": "Method", "ValueType": "Text", "Value": "VDA278-VOC.M" },
+              { "Property": "File name", "ValueType": "Text", "Value": "2025021100123TL03V2.D" },
+              { "Property": "Vial number", "ValueType": "Text", "Value": "B1023425" },
+              { "Property": "Remark", "ValueType": "Text", "Value": "Summary result; the detailed emissions table is retained for the higher VOC result." },
+              { "Property": "Sum of identified substances area", "Unit": "%", "Value": 48.6, "Rounding": "Commercial", "RoundingAccuracy": 2 },
+              { "Property": "Sum of identified substances emission", "Unit": "µg/g", "Value": 11.7, "Rounding": "Commercial", "RoundingAccuracy": 1 },
+              { "Property": "VOC total emission value", "Unit": "µg/g", "Value": 20.9, "Rounding": "Commercial", "RoundingAccuracy": 1 }
+            ]
+          }
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-110000000003",
+          "_type": "TestExecution",
+          "Numerator": 3,
+          "Designation": "FOG run",
+          "SpecimenID": "01917fb1-6d60-8abc-8abc-111000000002",
+          "MeasurementSystems": [
+            {
+              "_id": "01917fb1-6d60-8abc-8abc-112000000003",
+              "_type": "MeasurementSystem",
+              "Designation": "GCMS",
+              "SystemType": "GC-AB01",
+              "Location": "Laboratory 1"
+            }
+          ],
+          "SingleResults": {
+            "_id": "01917fb1-6d60-8abc-8abc-200000000003",
+            "_type": "InformationSet",
+            "Designation": "FOG",
+            "Attributes": [
+              { "Property": "Method", "ValueType": "Text", "Value": "VDA278-FOG.M" },
+              { "Property": "File name", "ValueType": "Text", "Value": "2025021100123TL03F1.D" },
+              { "Property": "Vial number", "ValueType": "Text", "Value": "B1023427" },
+              { "Property": "Remark", "ValueType": "Text", "Value": "No CLP or GADSL classifications were identified in the FOG analysis." },
+              { "Property": "Sum of identified substances area", "Unit": "%", "Value": 73.4, "Rounding": "Commercial", "RoundingAccuracy": 2 },
+              { "Property": "Sum of identified substances emission", "Unit": "µg/g", "Value": 220.4, "Rounding": "Commercial", "RoundingAccuracy": 1 },
+              { "Property": "FOG total emission value", "Unit": "µg/g", "Value": 238, "Rounding": "Commercial", "RoundingAccuracy": 1 }
+            ],
+            "ArraySpec": [
+              { "Property": "Retention time", "Unit": "min" },
+              { "Property": "Substance name" },
+              { "Property": "Legacy substance" },
+              { "Property": "Mass fragments" },
+              { "Property": "Main mass fragment" },
+              { "Property": "Potential substance match" },
+              { "Property": "CAS registry number" },
+              { "Property": "Area", "Unit": "%" },
+              { "Property": "Emission", "Unit": "µg/g" },
+              { "Property": "CLP classifications" },
+              { "Property": "GADSL classifications" },
+              { "Property": "Remark" }
+            ],
+            "ArrayValue": [
+              [14.8, "branched alkane", null, [57, 71, 43, 85, 124], 57, null, null, 0.46, 1.1, [], [], null],
+              [15.19, "n-octadecane", null, [57, 43, 71, 85, 41], 57, null, "593-45-3", 0.57, 1.3, [], [], null],
+              [24.62, "n-eicosane", null, [57, 71, 85, 43], 57, null, "112-95-8", 32.1, 98.0, [], [], null],
+              [31.84, "diisodecyl phthalate", "DIDP", [149, 57, 71, 167], 149, null, "26761-40-0", 40.27, 120.0, [], [], null]
+            ]
+          }
         }
       ],
-      "ConsolidatedCharacteristicValues": [
+      "ReportedProperties": [
         {
           "_id": "01917fb1-6d60-8abc-8abc-300000000001",
           "_type": "ConsolidatedCharacteristicValue",
@@ -367,29 +288,16 @@
           "Property": "VOC total emission value",
           "Unit": "µg/g",
           "Value": 29.1,
-          "Aggregation": "None",
+          "Aggregation": "Maximum",
           "Rounding": "Commercial",
           "RoundingAccuracy": 1,
           "SingleResultIDs": [
-            "01917fb1-6d60-8abc-8abc-200000000001"
+            "01917fb1-6d60-8abc-8abc-200000000001",
+            "01917fb1-6d60-8abc-8abc-200000000002"
           ]
         },
         {
           "_id": "01917fb1-6d60-8abc-8abc-300000000002",
-          "_type": "ConsolidatedCharacteristicValue",
-          "CriterionType": "Variable/Quantitative",
-          "Property": "VOC second total emission value",
-          "Unit": "µg/g",
-          "Value": 20.9,
-          "Aggregation": "None",
-          "Rounding": "Commercial",
-          "RoundingAccuracy": 1,
-          "SingleResultIDs": [
-            "01917fb1-6d60-8abc-8abc-200000000001"
-          ]
-        },
-        {
-          "_id": "01917fb1-6d60-8abc-8abc-300000000003",
           "_type": "ConsolidatedCharacteristicValue",
           "CriterionType": "Variable/Quantitative",
           "Property": "FOG total emission value",
@@ -398,9 +306,73 @@
           "Aggregation": "None",
           "Rounding": "Commercial",
           "RoundingAccuracy": 1,
-          "SingleResultIDs": [
-            "01917fb1-6d60-8abc-8abc-200000000003"
-          ]
+          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000003"]
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-300000000101",
+          "_type": "ConsolidatedCharacteristicValue",
+          "CriterionType": "Attribute/Qualitative",
+          "Property": "CLP classification",
+          "ValueType": "Text",
+          "Value": "Repr. 2",
+          "Aggregation": "None",
+          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "100-42-5" }],
+          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-300000000102",
+          "_type": "ConsolidatedCharacteristicValue",
+          "CriterionType": "Attribute/Qualitative",
+          "Property": "GADSL classification",
+          "ValueType": "Text",
+          "Value": "D",
+          "Aggregation": "None",
+          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "100-42-5" }],
+          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-300000000103",
+          "_type": "ConsolidatedCharacteristicValue",
+          "CriterionType": "Attribute/Qualitative",
+          "Property": "CLP classification",
+          "ValueType": "Text",
+          "Value": "Muta. 2",
+          "Aggregation": "None",
+          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "108-95-2" }],
+          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-300000000104",
+          "_type": "ConsolidatedCharacteristicValue",
+          "CriterionType": "Attribute/Qualitative",
+          "Property": "GADSL classification",
+          "ValueType": "Text",
+          "Value": "D",
+          "Aggregation": "None",
+          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "108-95-2" }],
+          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-300000000105",
+          "_type": "ConsolidatedCharacteristicValue",
+          "CriterionType": "Attribute/Qualitative",
+          "Property": "GADSL classification",
+          "ValueType": "Text",
+          "Value": "D",
+          "Aggregation": "None",
+          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "100-41-4" }],
+          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
+        },
+        {
+          "_id": "01917fb1-6d60-8abc-8abc-300000000106",
+          "_type": "ConsolidatedCharacteristicValue",
+          "CriterionType": "Attribute/Qualitative",
+          "Property": "GADSL classification",
+          "ValueType": "Text",
+          "Value": "D",
+          "Aggregation": "None",
+          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "96-76-4" }],
+          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
         }
       ]
     }
@@ -412,20 +384,13 @@
       "Location": {
         "_id": "01917fb1-6d60-8abc-8abc-950a711ad4d2",
         "_type": "Location",
-        "Name": "TestLab",
+        "Name": "Example Contractor",
         "Identification": [
           {
             "Type": "Example Identification Type",
             "Identifier": "00011"
           }
-        ],
-        "Address": {
-          "_id": "01917fb1-6d60-8abc-8abc-002abdd41288",
-          "_type": "ContactDetails",
-          "EMail": "info@testlab.com",
-          "Fax": "\u002B49 222 333 441",
-          "Phone": "\u002B49 222 333 440"
-        }
+        ]
       },
       "TestingManager": {
         "_id": "01917fb1-6d60-8abc-8abc-e9914c422dc7",
@@ -434,38 +399,7 @@
         "LastName": "Doe",
         "ID-Number": "108326",
         "EMail": "john.doe@testlab.com"
-      },
-      "Certifications": [
-        {
-          "_id": "01917fb1-6d60-8abc-8abc-51e397accdb0",
-          "_type": "Certification",
-          "Specification": {
-            "Authority": "DIN",
-            "Type": "DIN EN ISO/IEC",
-            "Number": "17025",
-            "IssueDate": "2018-03"
-          },
-          "AccreditationDate": {
-            "Date": "2019-11-01"
-          }
-        },
-        {
-          "_id": "01917fb1-6d60-8abc-8abc-2619c6d9ea40",
-          "_type": "Certification",
-          "Specification": {
-            "Authority": "Example Authority",
-            "Type": "EXA",
-            "Number": "1001",
-            "IssueDate": "2019-01"
-          },
-          "AccreditationDate": {
-            "Date": "2022-11-01"
-          },
-          "ValidUntil": {
-            "Date": "2025-11-01"
-          }
-        }
-      ]
+      }
     },
     {
       "_id": "01917fb1-6d60-8abc-8abc-ac49a8c54353",
@@ -473,60 +407,22 @@
       "Location": {
         "_id": "01917fb1-6d60-8abc-8abc-950a711ad4d3",
         "_type": "Location",
-        "Name": "TestLab",
+        "Name": "Example Test Laboratory",
         "Identification": [
           {
             "Type": "Example Identification Type",
-            "Identifier": "00011"
+            "Identifier": "00012"
           }
-        ],
-        "Address": {
-          "_id": "01917fb1-6d60-8abc-8abc-002abdd41289",
-          "_type": "ContactDetails",
-          "EMail": "info@testlab.com",
-          "Fax": "\u002B49 222 333 441",
-          "Phone": "\u002B49 222 333 440"
-        }
+        ]
       },
       "TestingManager": {
         "_id": "01917fb1-6d60-8abc-8abc-e9914c422dc8",
         "_type": "Person",
-        "FirstName": "John",
+        "FirstName": "Jane",
         "LastName": "Doe",
-        "ID-Number": "108326",
-        "EMail": "john.doe@testlab.com"
-      },
-      "Certifications": [
-        {
-          "_id": "01917fb1-6d60-8abc-8abc-51e397accdb1",
-          "_type": "Certification",
-          "Specification": {
-            "Authority": "DIN",
-            "Type": "DIN EN ISO/IEC",
-            "Number": "17025",
-            "IssueDate": "2018-03"
-          },
-          "AccreditationDate": {
-            "Date": "2019-11-01"
-          }
-        },
-        {
-          "_id": "01917fb1-6d60-8abc-8abc-2619c6d9ea41",
-          "_type": "Certification",
-          "Specification": {
-            "Authority": "Example Authority",
-            "Type": "EXA",
-            "Number": "1001",
-            "IssueDate": "2019-01"
-          },
-          "AccreditationDate": {
-            "Date": "2022-11-01"
-          },
-          "ValidUntil": {
-            "Date": "2025-11-01"
-          }
-        }
-      ]
+        "ID-Number": "108327",
+        "EMail": "jane.doe@testlab.com"
+      }
     }
   ]
 }
