@@ -160,11 +160,13 @@
           "type": "array",
           "minItems": 1,
           "maxItems": 1,
-          "prefixItems": [{ "$ref": "#/$defs/VDA278.ProcessStepPreconditioning" }],
+          "prefixItems": [{"$ref": "#/$defs/VDA278.ProcessStepPreconditioning"}],
           "items": false
-        }
+        },
+        "AdditionalInformation": {"$ref": "#/$defs/VDA278.SampleProperties"}
       },
-      "required": ["ProcessHistory"]
+      "required": ["ProcessHistory", "AdditionalInformation"],
+      "description": "One test portion (P1 or P2 / tube loading), possibly containing several physical pieces. Number specimens counts pieces within the portion, not test executions."
     },
     "VDA278.ProcessStepPreconditioning": {
       "type": "object",
@@ -179,20 +181,92 @@
     "VDA278.ProcessDataPreconditioning": {
       "type": "object",
       "properties": {
-        "Designation": { "const": "Preconditioning" },
+        "Designation": {"const": "Preconditioning"},
         "Attributes": {
+          "description": "Duration, end date and both temperatures retain their order. Relative humidity is optional as a complete minimum/maximum pair. An optional Unicode Remark may follow the required attributes.",
           "type": "array",
-          "minItems": 6,
-          "maxItems": 6,
+          "minItems": 4,
+          "maxItems": 7,
           "prefixItems": [
-            { "$ref": "#/$defs/VDA278.AttributePreconditioningDuration" },
-            { "$ref": "#/$defs/VDA278.AttributePreconditioningEndDate" },
-            { "$ref": "#/$defs/VDA278.AttributePreconditioningTempMin" },
-            { "$ref": "#/$defs/VDA278.AttributePreconditioningTempMax" },
-            { "$ref": "#/$defs/VDA278.AttributePreconditioningHumidMin" },
-            { "$ref": "#/$defs/VDA278.AttributePreconditioningHumidMax" }
+            {"$ref": "#/$defs/VDA278.AttributePreconditioningDuration"},
+            {"$ref": "#/$defs/VDA278.AttributePreconditioningEndDate"},
+            {"$ref": "#/$defs/VDA278.AttributePreconditioningTempMin"},
+            {"$ref": "#/$defs/VDA278.AttributePreconditioningTempMax"}
           ],
-          "items": false
+          "items": {
+            "oneOf": [
+              {"$ref": "#/$defs/VDA278.AttributePreconditioningHumidMin"},
+              {"$ref": "#/$defs/VDA278.AttributePreconditioningHumidMax"},
+              {"$ref": "#/$defs/VDA278.AttributeRemark"}
+            ]
+          },
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "properties": {"Property": {"const": "Relative humidity minimum"}},
+                "required": ["Property"]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {"Property": {"const": "Relative humidity maximum"}},
+                "required": ["Property"]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "contains": {"type": "object", "properties": {"Property": {"const": "Remark"}}, "required": ["Property"]},
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "if": {
+                "anyOf": [
+                  {
+                    "contains": {
+                      "type": "object",
+                      "properties": {"Property": {"const": "Relative humidity minimum"}},
+                      "required": ["Property"]
+                    }
+                  },
+                  {
+                    "contains": {
+                      "type": "object",
+                      "properties": {"Property": {"const": "Relative humidity maximum"}},
+                      "required": ["Property"]
+                    }
+                  }
+                ]
+              },
+              "then": {
+                "allOf": [
+                  {
+                    "contains": {
+                      "type": "object",
+                      "properties": {"Property": {"const": "Relative humidity minimum"}},
+                      "required": ["Property"]
+                    },
+                    "minContains": 1,
+                    "maxContains": 1
+                  },
+                  {
+                    "contains": {
+                      "type": "object",
+                      "properties": {"Property": {"const": "Relative humidity maximum"}},
+                      "required": ["Property"]
+                    },
+                    "minContains": 1,
+                    "maxContains": 1
+                  }
+                ]
+              }
+            }
+          ]
         }
       },
       "required": ["Designation", "Attributes"]
@@ -335,7 +409,9 @@
     },
     "VDA278.AttributeRemark": {
       "type": "object",
-      "properties": { "Property": { "const": "Remark" }, "Value": { "type": "string" } }
+      "properties": {"Property": {"const": "Remark"}, "Value": {"type": "string", "maxLength": 1000}},
+      "description": "Unicode free text, including umlauts, up to 1000 characters. Optional in sample properties and preconditioning; required at its existing position in run attributes. Generic object-level Comment is unchanged.",
+      "required": ["Property", "Value"]
     },
     "VDA278.AttributeSumIdentifiedArea": {
       "type": "object",
@@ -395,23 +471,18 @@
       "minItems": 12,
       "maxItems": 12,
       "prefixItems": [
-        { "type": "number", "minimum": 0.0 },
-        { "type": ["string", "null"] },
-        { "type": ["string", "null"] },
-        { "type": "array", "minItems": 1, "items": { "type": "integer", "minimum": 0 } },
-        { "type": "integer", "minimum": 0 },
-        { "type": ["string", "null"] },
-        {
-          "oneOf": [
-            { "type": "string", "pattern": "^[0-9]{2,7}-[0-9]{2}-[0-9]$" },
-            { "type": "null" }
-          ]
-        },
-        { "type": "number", "minimum": 0.0, "maximum": 100.0 },
-        { "type": "number", "minimum": 0.0 },
-        { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-        { "type": "array", "uniqueItems": true, "items": { "enum": ["D", "P"] } },
-        { "type": ["string", "null"] }
+        {"type": "number", "minimum": 0.0},
+        {"type": ["string", "null"]},
+        {"type": ["string", "null"]},
+        {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+        {"type": "integer", "minimum": 0},
+        {"type": ["string", "null"]},
+        {"oneOf": [{"type": "string", "pattern": "^[0-9]{2,7}-[0-9]{2}-[0-9]$"}, {"type": "null"}]},
+        {"type": "number", "minimum": 0.0, "maximum": 100.0},
+        {"type": "number", "minimum": 0.0},
+        {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        {"type": "array", "uniqueItems": true, "items": {"enum": ["D", "P"]}},
+        {"type": ["string", "null"], "maxLength": 1000}
       ],
       "items": false
     },
@@ -458,31 +529,259 @@
     "VDA278.ReportedPropertyClassification": {
       "type": "object",
       "properties": {
-        "Aggregation": { "const": "None" },
-        "CriterionType": { "const": "Attribute/Qualitative" },
-        "ValueType": { "const": "Text" },
+        "Aggregation": {"const": "None"},
+        "CriterionType": {"const": "Attribute/Qualitative"},
+        "ValueType": {"const": "Text"},
         "BusinessKeys": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 1,
-          "prefixItems": [
-            {
-              "type": "object",
-              "properties": {
-                "Name": { "const": "CAS registry number" },
-                "Value": { "type": "string", "pattern": "^[0-9]{2,7}-[0-9]{2}-[0-9]$" }
-              },
-              "required": ["Name", "Value"]
-            }
-          ],
-          "items": false
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {"const": "CAS registry number"},
+              "Value": {"type": "string", "pattern": "^[0-9]{2,7}-[0-9]{2}-[0-9]$"}
+            },
+            "required": ["Name", "Value"]
+          },
+          "uniqueItems": true
         },
-        "SingleResultIDs": { "type": "array", "minItems": 1, "maxItems": 1 }
+        "SingleResultIDs": {"type": "array", "minItems": 1, "uniqueItems": true}
       },
-      "required": [
-        "Property", "Value", "Aggregation", "CriterionType", "ValueType",
-        "BusinessKeys", "SingleResultIDs"
-      ]
+      "required": ["Property", "Value", "Aggregation", "CriterionType", "ValueType", "BusinessKeys", "SingleResultIDs"],
+      "description": "Optional classification extension. Group substances with the same Property and Value into one reported property. BusinessKeys lists their CAS numbers. SingleResultIDs is the union of supporting result IDs; it does not assert that every CAS occurs in every cited result. Pair uniqueness and references are checked by tools/validate.py."
+    },
+    "VDA278.AttributeSampleMass": {
+      "type": "object",
+      "properties": {
+        "Property": {"const": "Sample mass"},
+        "Unit": {"const": "mg"},
+        "ValueType": {"const": "Number"},
+        "Value": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "required": ["Property", "Unit", "ValueType", "Value"],
+      "description": "Measured total initial mass (Einwaage) of this portion before VOC analysis. Record P1 and P2 independently on their Specimen records."
+    },
+    "VDA278.AttributeSampleLength": {
+      "type": "object",
+      "properties": {
+        "Property": {"const": "Sample length"},
+        "Unit": {"const": "mm"},
+        "ValueType": {"const": "Number"},
+        "Value": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "required": ["Property", "Unit", "ValueType", "Value"],
+      "description": "Measured length of the specimen or representative pieces. Use Sample dimensions when a numeric dimension triple is not meaningful."
+    },
+    "VDA278.AttributeSampleWidth": {
+      "type": "object",
+      "properties": {
+        "Property": {"const": "Sample width"},
+        "Unit": {"const": "mm"},
+        "ValueType": {"const": "Number"},
+        "Value": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "required": ["Property", "Unit", "ValueType", "Value"],
+      "description": "Measured width of the specimen or representative pieces. Use Sample dimensions when a numeric dimension triple is not meaningful."
+    },
+    "VDA278.AttributeSampleHeight": {
+      "type": "object",
+      "properties": {
+        "Property": {"const": "Sample height"},
+        "Unit": {"const": "mm"},
+        "ValueType": {"const": "Number"},
+        "Value": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "required": ["Property", "Unit", "ValueType", "Value"],
+      "description": "Measured height of the specimen or representative pieces. Use Sample dimensions when a numeric dimension triple is not meaningful."
+    },
+    "VDA278.AttributeSampleDimensions": {
+      "type": "object",
+      "properties": {
+        "Property": {"const": "Sample dimensions"},
+        "ValueType": {"const": "Text"},
+        "Value": {"type": "string", "minLength": 1, "maxLength": 1000, "pattern": "\\S"}
+      },
+      "required": ["Property", "ValueType", "Value"],
+      "description": "Dimensions or a descriptive geometry for granules, fibers or irregular portions. Include units with numeric dimensions. Alternative to the numeric length/width/height triple."
+    },
+    "VDA278.AttributeNumberSpecimens": {
+      "type": "object",
+      "properties": {
+        "Property": {"const": "Number specimens"},
+        "ValueType": {"const": "Number"},
+        "Value": {"type": "integer", "minimum": 1}
+      },
+      "required": ["Property", "ValueType", "Value"],
+      "description": "Optional count of physical pieces within this test portion. Omit when pieces are not meaningfully countable, for example bulk fibers."
+    },
+    "VDA278.SampleProperties": {
+      "type": "object",
+      "properties": {
+        "_type": {"const": "InformationSet"},
+        "Designation": {"const": "Sample properties"},
+        "Attributes": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "oneOf": [
+              {"$ref": "#/$defs/VDA278.AttributeSampleMass"},
+              {"$ref": "#/$defs/VDA278.AttributeSampleLength"},
+              {"$ref": "#/$defs/VDA278.AttributeSampleWidth"},
+              {"$ref": "#/$defs/VDA278.AttributeSampleHeight"},
+              {"$ref": "#/$defs/VDA278.AttributeSampleDimensions"},
+              {"$ref": "#/$defs/VDA278.AttributeNumberSpecimens"},
+              {"$ref": "#/$defs/VDA278.AttributeRemark"}
+            ]
+          },
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "properties": {"Property": {"const": "Sample mass"}},
+                "required": ["Property"]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {"Property": {"const": "Sample length"}},
+                "required": ["Property"]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {"Property": {"const": "Sample width"}},
+                "required": ["Property"]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {"Property": {"const": "Sample height"}},
+                "required": ["Property"]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {"Property": {"const": "Sample dimensions"}},
+                "required": ["Property"]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {"Property": {"const": "Number specimens"}},
+                "required": ["Property"]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "contains": {"type": "object", "properties": {"Property": {"const": "Remark"}}, "required": ["Property"]},
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "oneOf": [
+                {
+                  "allOf": [
+                    {
+                      "contains": {
+                        "type": "object",
+                        "properties": {"Property": {"const": "Sample length"}},
+                        "required": ["Property"]
+                      },
+                      "minContains": 1,
+                      "maxContains": 1
+                    },
+                    {
+                      "contains": {
+                        "type": "object",
+                        "properties": {"Property": {"const": "Sample width"}},
+                        "required": ["Property"]
+                      },
+                      "minContains": 1,
+                      "maxContains": 1
+                    },
+                    {
+                      "contains": {
+                        "type": "object",
+                        "properties": {"Property": {"const": "Sample height"}},
+                        "required": ["Property"]
+                      },
+                      "minContains": 1,
+                      "maxContains": 1
+                    },
+                    {
+                      "contains": {
+                        "type": "object",
+                        "properties": {"Property": {"const": "Sample dimensions"}},
+                        "required": ["Property"]
+                      },
+                      "minContains": 0,
+                      "maxContains": 0
+                    }
+                  ]
+                },
+                {
+                  "allOf": [
+                    {
+                      "contains": {
+                        "type": "object",
+                        "properties": {"Property": {"const": "Sample dimensions"}},
+                        "required": ["Property"]
+                      },
+                      "minContains": 1,
+                      "maxContains": 1
+                    },
+                    {
+                      "contains": {
+                        "type": "object",
+                        "properties": {"Property": {"const": "Sample length"}},
+                        "required": ["Property"]
+                      },
+                      "minContains": 0,
+                      "maxContains": 0
+                    },
+                    {
+                      "contains": {
+                        "type": "object",
+                        "properties": {"Property": {"const": "Sample width"}},
+                        "required": ["Property"]
+                      },
+                      "minContains": 0,
+                      "maxContains": 0
+                    },
+                    {
+                      "contains": {
+                        "type": "object",
+                        "properties": {"Property": {"const": "Sample height"}},
+                        "required": ["Property"]
+                      },
+                      "minContains": 0,
+                      "maxContains": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "required": ["_id", "_type", "Designation", "Attributes"]
     }
   }
 }

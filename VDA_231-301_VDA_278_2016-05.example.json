@@ -60,6 +60,19 @@
           "Designation": "VOC specimen 1",
           "ComponentInstanceID": "01917fb1-6d60-8abc-8abc-0412c6aff92c",
           "Flagging": "First cut specimen",
+          "AdditionalInformation": {
+            "_id": "01917fb1-6d60-8abc-8abc-111a00000001",
+            "_type": "InformationSet",
+            "Designation": "Sample properties",
+            "Attributes": [
+              {"Property": "Sample mass", "Unit": "mg", "ValueType": "Number", "Value": 30.3},
+              {"Property": "Sample length", "Unit": "mm", "ValueType": "Number", "Value": 15.0},
+              {"Property": "Sample width", "Unit": "mm", "ValueType": "Number", "Value": 2.8},
+              {"Property": "Sample height", "Unit": "mm", "ValueType": "Number", "Value": 0.7},
+              {"Property": "Number specimens", "ValueType": "Number", "Value": 1},
+              {"Property": "Remark", "ValueType": "Text", "Value": "Prüfkörper P1: rechteckiger Zuschnitt; Beispielwerte, keine realen Messdaten."}
+            ]
+          },
           "Attachment": {
             "_id": "01917fb1-6d60-8abc-8abc-111100000001",
             "_type": "Attachment",
@@ -106,6 +119,19 @@
           "Designation": "VOC and FOG specimen 2",
           "ComponentInstanceID": "01917fb1-6d60-8abc-8abc-0412c6aff92c",
           "Flagging": "Second cut specimen",
+          "AdditionalInformation": {
+            "_id": "01917fb1-6d60-8abc-8abc-111a00000002",
+            "_type": "InformationSet",
+            "Designation": "Sample properties",
+            "Attributes": [
+              {"Property": "Sample mass", "Unit": "mg", "ValueType": "Number", "Value": 29.8},
+              {"Property": "Sample length", "Unit": "mm", "ValueType": "Number", "Value": 14.8},
+              {"Property": "Sample width", "Unit": "mm", "ValueType": "Number", "Value": 2.8},
+              {"Property": "Sample height", "Unit": "mm", "ValueType": "Number", "Value": 0.7},
+              {"Property": "Number specimens", "ValueType": "Number", "Value": 1},
+              {"Property": "Remark", "ValueType": "Text", "Value": "Prüfkörper P2: rechteckiger Zuschnitt; Beispielwerte, keine realen Messdaten."}
+            ]
+          },
           "Attachment": {
             "_id": "01917fb1-6d60-8abc-8abc-111100000002",
             "_type": "Attachment",
@@ -138,9 +164,7 @@
                   { "Property": "Duration", "Unit": "d", "Value": 7 },
                   { "Property": "End date", "Value": { "Date": "2025-02-17" } },
                   { "Property": "Temperature minimum", "Unit": "°C", "ValueType": "Number", "Value": 21.5 },
-                  { "Property": "Temperature maximum", "Unit": "°C", "ValueType": "Number", "Value": 24.0 },
-                  { "Property": "Relative humidity minimum", "Unit": "%", "ValueType": "Number", "Value": 42.0 },
-                  { "Property": "Relative humidity maximum", "Unit": "%", "ValueType": "Number", "Value": 56.8 }
+                  { "Property": "Temperature maximum", "Unit": "°C", "ValueType": "Number", "Value": 24.0 }
                 ]
               }
             }
@@ -291,10 +315,7 @@
           "Aggregation": "Maximum",
           "Rounding": "Commercial",
           "RoundingAccuracy": 1,
-          "SingleResultIDs": [
-            "01917fb1-6d60-8abc-8abc-200000000001",
-            "01917fb1-6d60-8abc-8abc-200000000002"
-          ]
+          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001", "01917fb1-6d60-8abc-8abc-200000000002"]
         },
         {
           "_id": "01917fb1-6d60-8abc-8abc-300000000002",
@@ -316,7 +337,7 @@
           "ValueType": "Text",
           "Value": "Repr. 2",
           "Aggregation": "None",
-          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "100-42-5" }],
+          "BusinessKeys": [{"Name": "CAS registry number", "Value": "100-42-5"}],
           "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
         },
         {
@@ -327,7 +348,12 @@
           "ValueType": "Text",
           "Value": "D",
           "Aggregation": "None",
-          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "100-42-5" }],
+          "BusinessKeys": [
+            {"Name": "CAS registry number", "Value": "100-42-5"},
+            {"Name": "CAS registry number", "Value": "108-95-2"},
+            {"Name": "CAS registry number", "Value": "100-41-4"},
+            {"Name": "CAS registry number", "Value": "96-76-4"}
+          ],
           "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
         },
         {
@@ -338,40 +364,7 @@
           "ValueType": "Text",
           "Value": "Muta. 2",
           "Aggregation": "None",
-          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "108-95-2" }],
-          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
-        },
-        {
-          "_id": "01917fb1-6d60-8abc-8abc-300000000104",
-          "_type": "ConsolidatedCharacteristicValue",
-          "CriterionType": "Attribute/Qualitative",
-          "Property": "GADSL classification",
-          "ValueType": "Text",
-          "Value": "D",
-          "Aggregation": "None",
-          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "108-95-2" }],
-          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
-        },
-        {
-          "_id": "01917fb1-6d60-8abc-8abc-300000000105",
-          "_type": "ConsolidatedCharacteristicValue",
-          "CriterionType": "Attribute/Qualitative",
-          "Property": "GADSL classification",
-          "ValueType": "Text",
-          "Value": "D",
-          "Aggregation": "None",
-          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "100-41-4" }],
-          "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
-        },
-        {
-          "_id": "01917fb1-6d60-8abc-8abc-300000000106",
-          "_type": "ConsolidatedCharacteristicValue",
-          "CriterionType": "Attribute/Qualitative",
-          "Property": "GADSL classification",
-          "ValueType": "Text",
-          "Value": "D",
-          "Aggregation": "None",
-          "BusinessKeys": [{ "Name": "CAS registry number", "Value": "96-76-4" }],
+          "BusinessKeys": [{"Name": "CAS registry number", "Value": "108-95-2"}],
           "SingleResultIDs": ["01917fb1-6d60-8abc-8abc-200000000001"]
         }
       ]
